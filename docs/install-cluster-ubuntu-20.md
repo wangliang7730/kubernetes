@@ -65,6 +65,28 @@ Hack required to provision K8s v1.15+ in LXC containers
 ```
 
 ## On kmaster
+#### 国内无法访问手动下载
+添加国内镜像源打开vim /etc/apt/sources.list 文件，添加一行
+```
+deb https://mirrors.aliyun.com/kubernetes/apt kubernetes-xenial main
+```
+更新系统源
+```
+apt upgrade
+apt update
+
+touch pullk8s.sh	# 创建脚本文件
+nano pullk8s.sh		# 编辑脚本
+```
+然后将以下内容复制进去
+```
+for  i  in  `kubeadm config images list`;  do
+    imageName=${i#k8s.gcr.io/}
+    docker pull registry.aliyuncs.com/google_containers/$imageName
+    docker tag registry.aliyuncs.com/google_containers/$imageName k8s.gcr.io/$imageName
+    docker rmi registry.aliyuncs.com/google_containers/$imageName
+done;
+```
 ##### Initialize Kubernetes Cluster
 Update the below command with the ip address of kmaster
 ```
