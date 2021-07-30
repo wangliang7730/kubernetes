@@ -87,6 +87,14 @@ for  i  in  `kubeadm config images list`;  do
     docker rmi registry.aliyuncs.com/google_containers/$imageName
 done;
 ```
+Ctrl + O回车键Ctrl + x
+```
+#给脚本文件赋权限
+chmod +x pullk8s.sh
+#执行脚本
+sh pullk8s.sh
+```
+
 ##### Initialize Kubernetes Cluster
 Update the below command with the ip address of kmaster
 ```
