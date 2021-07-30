@@ -71,7 +71,8 @@ Update the below command with the ip address of kmaster
 kubeadm init --apiserver-advertise-address=172.16.16.100 --pod-network-cidr=192.168.0.0/16  --ignore-preflight-errors=all
 ```
 ```
-我的本地网络192.168.216.130为master主机ip  kubeadm init --apiserver-advertise-address=192.168.216.130 --pod-network-cidr=10.244.0.0/16  --ignore-preflight-errors=all
+我的本地网络192.168.216.130为master主机ip 修改后
+kubeadm init --apiserver-advertise-address=192.168.216.130 --pod-network-cidr=10.244.0.0/16  --ignore-preflight-errors=all
 ```
 ##### Deploy Calico network
 ```
