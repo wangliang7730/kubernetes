@@ -53,6 +53,7 @@ sysctl --system
 ```
 {
   curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add
+  curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add
 }
 ```
 ##### Install Kubernetes components
