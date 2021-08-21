@@ -49,11 +49,12 @@ sysctl --system
   echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list
 }
 ```
-#### Add Apt repository 上面的命令无法执行改用下面国内的地址
+##### Add Apt repository 上面的命令无法执行改用下面国内的地址
+'''
 {
   curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add
 }
-
+'''
 ##### Install Kubernetes components
 ```
 apt update && apt install -y kubeadm=1.18.5-00 kubelet=1.18.5-00 kubectl=1.18.5-00
