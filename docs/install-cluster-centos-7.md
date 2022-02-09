@@ -110,8 +110,9 @@ Have Fun!!
 ## The connection to the server localhost:8080 was refused
 Master节点出现这个报错
 首先需要检查Master安装完Kubernetes后是否执行了下面命令。需要注意到是：如果整个过程都是在普通用户下使用sudo安装，则仍然需要在普通用户下执行了下面命令；如果整个过程都在root用户下安装，则还在root用户下执行了下面命令。
-
+```
 mkdir -p $HOME/.kube
+```
 #root用户下执行不需要加sudo
 ```
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
