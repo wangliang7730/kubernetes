@@ -113,18 +113,23 @@ Master节点出现这个报错
 
 mkdir -p $HOME/.kube
 #root用户下执行不需要加sudo
+```
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
-
+```
 如果执行了，就到用户目录下检查是否有.kube文件夹，文件夹中是否有config文件，如果都有还是报错，就需要执行下面命令把它加入到环境变量中：
-
+```
 export KUBECONFIG=$HOME/.kube/config
-
+```
 Node节点出现这个报错
 kubectl命令需要使用kubernetes-admin来运行，所以需要将主节点中的/etc/kubernetes/admin.conf文件拷贝到从节点用户目录下，然后配置环境变量：
 
 #在Master节点运行下面命令将admin.conf文件拷贝到从节点
+```
 sudo scp /etc/kubernetes/admin.conf root@192.168.63.131:~
+```
 #在Node节点运行下面命令配置环境变量
+```
 export KUBECONFIG=$HOME/admin.conf
+```
 
