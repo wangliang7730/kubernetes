@@ -71,6 +71,7 @@ systemctl enable --now kubelet
 ##### Initialize Kubernetes Cluster
 ```
 kubeadm init --apiserver-advertise-address=172.16.16.100 --pod-network-cidr=192.168.0.0/16   #如果报错可以加上 --kubernetes-version=v1.20.11 指定版本
+如果还出现错误请 kubeadm reset 操作
 ```
 ##### Deploy Calico network
 ```
