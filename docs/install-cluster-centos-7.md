@@ -74,7 +74,8 @@ kubeadm init --apiserver-advertise-address=172.16.16.100 --pod-network-cidr=192.
 ```
 ##### Deploy Calico network
 ```
-kubectl --kubeconfig=/etc/kubernetes/admin.conf create -f https://docs.projectcalico.org/v3.14/manifests/calico.yaml
+#注释kubectl --kubeconfig=/etc/kubernetes/admin.conf create -f https://docs.projectcalico.org/v3.14/manifests/calico.yaml
+kubectl --kubeconfig=/etc/kubernetes/admin.conf create -f https://github.com/flannel-io/flannel/blob/master/Documentation/kube-flannel.yml
 ```
 ##### Cluster join command
 ```
