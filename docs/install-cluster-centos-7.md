@@ -60,7 +60,7 @@ EOF
 ```
 ##### Install Kubernetes components
 ```
-yum install -y kubeadm-1.18.5-0 kubelet-1.18.5-0 kubectl-1.18.5-0
+#早期版本注释 yum install -y kubeadm-1.18.5-0 kubelet-1.18.5-0 kubectl-1.18.5-0
 yum install -y kubeadm-1.20.11-0 kubelet-1.20.11-0 kubectl-1.20.11-0
 ```
 ##### Enable and Start kubelet service
