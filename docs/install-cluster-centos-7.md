@@ -70,8 +70,8 @@ systemctl enable --now kubelet
 ## On kmaster
 ##### Initialize Kubernetes Cluster
 ```
-kubeadm init --apiserver-advertise-address=172.16.16.100 --pod-network-cidr=192.168.0.0/16   #如果报错可以加上 --kubernetes-version=v1.20.11 指定版本
-如果还出现错误请 kubeadm reset 操作
+kubeadm init --apiserver-advertise-address=172.16.16.100 --pod-network-cidr=192.168.0.0/16 --kubernetes-version=v1.20.11 --image-repository registry.aliyuncs.com/google_containers #固定镜像源参考https://blog.csdn.net/weixin_30752699/article/details/101417734  #如果报错可以加上 --kubernetes-version=v1.20.11 指定版本
+如果还出现错误请 kubeadm reset 操作重新安装和初始化
 ```
 ##### Deploy Calico network
 ```
